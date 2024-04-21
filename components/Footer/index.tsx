@@ -46,22 +46,22 @@ const Footer = () => {
                 </a>
 
                 <p className="mb-10 mt-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  İleri Teknoloji Çözümleri
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  contact
+                  İletişim
                 </p>
                 <a
                   href="#"
                   className="text-itemtitle font-medium text-black dark:text-white"
                 >
-                  hello@solid.com
+                  hello@digitalhat.com
                 </a>
               </motion.div>
 
               <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
-                <motion.div
+                {/* <motion.div
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -117,7 +117,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   variants={{
@@ -138,13 +138,13 @@ const Footer = () => {
                   className="animate_top"
                 >
                   <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Support
+                    Destek
                   </h4>
 
                   <ul>
-                    <li>
+                    {/* <li>
                       <a
-                        href="#"
+                        href=""
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Company
@@ -165,13 +165,13 @@ const Footer = () => {
                       >
                         Our Blog
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a
-                        href="#"
+                        href="/support"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Contact Us
+                        İletişim
                       </a>
                     </li>
                   </ul>
@@ -196,10 +196,10 @@ const Footer = () => {
                   className="animate_top"
                 >
                   <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Newsletter
+                    Haberdar kalın
                   </h4>
                   <p className="mb-4 w-[90%]">
-                    Subscribe to receive future updates
+                    Gelecekteki güncellemeleri almak için abone olun
                   </p>
 
                   <form action="#">
@@ -264,19 +264,19 @@ const Footer = () => {
               className="animate_top"
             >
               <ul className="flex items-center gap-8">
-                <li>
+                {/* <li>
                   <a href="#" className="hover:text-primary">
                     English
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#" className="hover:text-primary">
                     Privacy Policy
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="#" className="hover:text-primary">
-                    Support
+                    Destek
                   </a>
                 </li>
               </ul>
@@ -301,7 +301,7 @@ const Footer = () => {
               className="animate_top"
             >
               <p>
-                &copy; {new Date().getFullYear()} Solid. All rights reserved
+                &copy; {new Date().getFullYear()} Digital HAT. Tüm Hakları Saklıdır.
               </p>
             </motion.div>
 
@@ -323,7 +323,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="animate_top"
             >
-              <ul className="flex items-center gap-5">
+              {/* <ul className="flex items-center gap-5">
                 <li>
                   <a href="#" aria-label="social icon">
                     <svg
@@ -416,7 +416,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </motion.div>
           </div>
           {/* <!-- Footer Bottom --> */}

@@ -52,10 +52,10 @@ const Signup = () => {
             className="animate_top rounded-lg bg-white px-7.5 pt-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black xl:px-15 xl:pt-15"
           >
             <h2 className="mb-15 text-center text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-              Create an Account
+              Hesap oluştur
             </h2>
 
-            <div className="flex items-center gap-8">
+            {/* <div className="flex items-center gap-8">
               <button
                 aria-label="signup with google"
                 className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
@@ -113,12 +113,12 @@ const Signup = () => {
                 </span>
                 Signup with Github
               </button>
-            </div>
+            </div> */}
 
             <div className="mb-10 flex items-center justify-center">
               <span className="dark:bg-stroke-dark hidden h-[1px] w-full max-w-[200px] bg-stroke dark:bg-strokedark sm:block"></span>
               <p className="text-body-color dark:text-body-color-dark w-full px-5 text-center text-base">
-                Or, register with your email
+                .  .  .
               </p>
               <span className="dark:bg-stroke-dark hidden h-[1px] w-full max-w-[200px] bg-stroke dark:bg-strokedark sm:block"></span>
             </div>
@@ -128,7 +128,7 @@ const Signup = () => {
                 <input
                   name="firstName"
                   type="text"
-                  placeholder="First name"
+                  placeholder="İsim"
                   value={data.firstName}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
@@ -139,7 +139,7 @@ const Signup = () => {
                 <input
                   name="lastName"
                   type="text"
-                  placeholder="Last name"
+                  placeholder="Soyisim"
                   value={data.lastName}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
@@ -163,7 +163,7 @@ const Signup = () => {
                 <input
                   name="password"
                   type="password"
-                  placeholder="Password"
+                  placeholder="Şifre"
                   value={data.password}
                   onChange={(e) =>
                     setData({ ...data, [e.target.name]: e.target.value })
@@ -200,7 +200,7 @@ const Signup = () => {
                     htmlFor="default-checkbox"
                     className="flex max-w-[425px] cursor-pointer select-none  pl-3"
                   >
-                    Keep me signed in
+                    Beni hatırla.
                   </label>
                 </div>
 
@@ -208,7 +208,7 @@ const Signup = () => {
                   aria-label="signup with email and password"
                   className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
                 >
-                  Create Account
+                  Kayıt Ol
                   <svg
                     className="fill-white"
                     width="14"
@@ -227,12 +227,12 @@ const Signup = () => {
 
               <div className="mt-12.5 border-t border-stroke py-5 text-center dark:border-strokedark">
                 <p>
-                  Already have an account?{" "}
+                  Zaten hesabınız var mı?{" "}
                   <Link
                     className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
                     href="/auth/signin"
                   >
-                    Sign In
+                    Giriş Yap
                   </Link>
                 </p>
               </div>

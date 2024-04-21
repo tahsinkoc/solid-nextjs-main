@@ -11,9 +11,9 @@ const Integration = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: `INTEGRATIONS`,
-              subtitle: `Remotely Maintain Your Data, From Anywhere, Anytime.`,
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+              title: `Entegrasyonlar`,
+              subtitle: `Bağlantıda Kalın, Sorunsuz Entegrasyon İçin`,
+              description: `İşletmenizin entegrasyon ihtiyaçlarına uzaktan ve her zaman müdahale etme seçeneğiyle hizmet veriyoruz. Sorunsuz entegrasyonlar için bizi tercih edin, işlerinizi kesintisiz bir şekilde sürdürün!`,
             }}
           />
 

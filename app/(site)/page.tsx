@@ -27,14 +27,16 @@ export default function Home() {
       <Feature />
       <About />
       <FeaturesTab />
-      <FunFact />
+      {/* <FunFact /> */}
       <Integration />
       <CTA />
       <FAQ />
-      <Testimonial />
-      <Pricing />
-      <Contact />
-      <Blog />
+      {/* <Testimonial /> */}
+      {/* <Pricing /> */}
+      {/* <div className="my-12">
+        <Contact />
+      </div> */}
+      {/* <Blog /> */}
     </main>
   );
 }
