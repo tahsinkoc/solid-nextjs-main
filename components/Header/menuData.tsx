@@ -21,25 +21,31 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 31,
-        title: 'Ürün 1',
+        title: 'Modüler E-Ticaret Yazılımı',
         newTab: false,
         path: '#'
       },
       {
         id: 32,
-        title: 'Ürün 1',
+        title: 'Haberleşme Modülü',
         newTab: false,
         path: '#'
       },
       {
         id: 33,
-        title: 'Ürün 1',
+        title: 'Pazaryeri Entegratörü',
         newTab: false,
         path: '#'
       },
       {
         id: 34,
-        title: 'Ürün 1',
+        title: 'Filo Yönetim Uygulaması',
+        newTab: false,
+        path: '#'
+      },
+      {
+        id: 35,
+        title: 'Personel Yönetim Sistemi',
         newTab: false,
         path: '#'
       },

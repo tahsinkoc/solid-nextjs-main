@@ -30,16 +30,16 @@ const Footer = () => {
               >
                 <a href="index.html" className="relative">
                   <Image
-                    width={110}
-                    height={80}
-                    src="/images/logo/logo-light.svg"
+                    width={50}
+                    height={50}
+                    src="/Digitalhat.png"
                     alt="Logo"
                     className="dark:hidden"
                   />
                   <Image
-                    width={110}
-                    height={80}
-                    src="/images/logo/logo-dark.svg"
+                    width={50}
+                    height={50}
+                    src="/Digitalhat.png"
                     alt="Logo"
                     className="hidden dark:block"
                   />
@@ -56,7 +56,7 @@ const Footer = () => {
                   href="#"
                   className="text-itemtitle font-medium text-black dark:text-white"
                 >
-                  hello@digitalhat.com
+                  info@digitalhat.com
                 </a>
               </motion.div>
 
