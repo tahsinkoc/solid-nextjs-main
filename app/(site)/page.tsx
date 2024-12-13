@@ -12,6 +12,7 @@ import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
+import Projects from "@/components/Projects/Projects";
 
 export const metadata: Metadata = {
   title: "Digitalhat - Home Page",
@@ -29,6 +30,7 @@ export default function Home() {
       <FeaturesTab />
       {/* <FunFact /> */}
       <Integration />
+      <Projects />
       <CTA />
       <FAQ />
       {/* <Testimonial /> */}

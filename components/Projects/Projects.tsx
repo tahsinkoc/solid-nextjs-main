@@ -3,8 +3,9 @@ import React from "react";
 import featuresData from "../Features/featuresData";
 import SingleFeature from "../Features/SingleFeature";
 import SectionHeader from "../Common/SectionHeader";
+import Cont from "./Cont";
 
-const Feature = () => {
+const Projects = () => {
     return (
         <>
             {/* <!-- ===== Features Start ===== --> */}
@@ -13,10 +14,10 @@ const Feature = () => {
                     {/* <!-- Section Title Start --> */}
                     <SectionHeader
                         headerInfo={{
-                            title: "ÇÖZÜMLERİMİZ",
-                            subtitle: "Dijital Dönüşümünüzü Güçlendiriyoruz",
+                            title: "Projelerimiz",
+                            subtitle: "Başarı ile geliştirdiğimiz projelerden bazıları",
                             description: `
-                            Dijital dönüşümde yanınızdayız! DIGITAL HAT olarak, işletmenizin dijital potansiyelini artırmak için buradayız. Yenilikçi çözümlerimizle size destek oluyor, başarıya giden yolda sizinle birlikte ilerliyoruz.
+                            Başarılı projelerimiz, sektördeki uzmanlığımızın ve müşterilerimize sağladığımız sürekli desteğin bir kanıtıdır. İhtiyaçlarınıza özel çözümler geliştirmek için yanınızdayız.
                             `,
                         }}
                     />
@@ -26,7 +27,7 @@ const Feature = () => {
                         {/* <!-- Features item Start --> */}
 
                         {featuresData.map((feature, key) => (
-                            <SingleFeature feature={feature} key={key} />
+                            <Cont feature={feature} key={key} />
                         ))}
                         {/* <!-- Features item End --> */}
                     </div>
@@ -38,4 +39,4 @@ const Feature = () => {
     );
 };
 
-export default Feature;
+export default Projects;
