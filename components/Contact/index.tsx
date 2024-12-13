@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { FormEvent, useState } from "react";
+import ReCAPTCHA from 'react-google-recaptcha';
+
 interface ContactForm {
   fullname: string;
   email: string;
@@ -14,6 +16,7 @@ const Contact = () => {
    * Source: https://www.joshwcomeau.com/react/the-perils-of-rehydration/
    * Reason: To fix rehydration error
    */
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [pop, setPop] = useState(false);
 
   const [hasMounted, setHasMounted] = React.useState(false);
@@ -24,23 +27,51 @@ const Contact = () => {
     return null;
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    const formData = new FormData(e.currentTarget)
-    const form = Object.fromEntries(formData);
-    e.preventDefault()
-    fetch('https://siteapi.dgtalhat.com/api/offerrequests', {
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formData = {
+      fullname: e.currentTarget['fullname'].value,
+      email: e.currentTarget['email'].value,
+      subject: e.currentTarget['subject'].value,
+      phone: e.currentTarget['phone'].value,
+      description: e.currentTarget['description'].value
+    };
+
+    const response = await fetch('https://siteapi.dgtalhat.com/api/offerrequests', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(form)
-    })
-      .then(res => res.json())
-      .then((res) => {
-        setPop(true)
-        console.log(res);
-      })
-  }
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+    setPop(true)
+    console.log(result);
+  };
+
+  // function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  //   const formData = new FormData(e.currentTarget)
+  //   const form = Object.fromEntries(formData);
+  //   e.preventDefault()
+  //   fetch('https://siteapi.dgtalhat.com/api/offerrequests', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(form)
+  //   })
+  //     .then(res => res.json())
+  //     .then((res) => {
+  //       setPop(true)
+  //       console.log(res);
+  //     })
+  // }
+
+
+
 
 
   return (
@@ -158,7 +189,7 @@ const Contact = () => {
                   <textarea
                     required
                     name="description"
-                    id="phone"
+                    id="description"
                     placeholder="Mesaj"
                     rows={4}
                     className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
@@ -197,7 +228,10 @@ const Contact = () => {
                       Bu işaretçiyi işaretleyerek "Form" kullanım koşullarını ve çerez kullanımını kabul etmiş olursunuz.
                     </label>
                   </div>
-
+                  <ReCAPTCHA
+                    sitekey="6Le7GJsqAAAAANpGTcIg6LUkEByTzd8bDLqa7Us8"
+                    onChange={(token) => setCaptchaToken(token)}
+                  />
                   <button
                     aria-label="send message"
                     className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
@@ -268,6 +302,7 @@ const Contact = () => {
             </motion.div>
           </div>
         </div>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
       </section>
       {/* <!-- ===== Contact End ===== --> */}
     </>
