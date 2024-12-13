@@ -4,6 +4,35 @@
 
 /* third-party libraries CSS */
 
+
+
+@keyframes fadei {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes ani{
+  from {
+    transform: scale(0);
+  }to {
+    transform: scale(1)
+  }
+}
+
+
+.fade{
+  animation: fadei .4s ease-in-out;
+}
+
+.anima {
+  animation: ani .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
 .testimonial-01 .swiper-pagination-bullet {
   @apply h-2.5 w-2.5 bg-stroke opacity-100;
 }

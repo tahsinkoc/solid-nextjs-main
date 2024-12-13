@@ -37,6 +37,7 @@ const Contact = () => {
     })
       .then(res => res.json())
       .then((res) => {
+        setPop(true)
         console.log(res);
       })
   }
@@ -46,28 +47,30 @@ const Contact = () => {
     <>
       {/* <!-- ===== Contact Start ===== --> */}
       <section id="support" className="px-4 md:px-8 2xl:px-0">
-        <div className="w-full h-screen fixed top-0 left-0 z-[99999999999] flex items-center fade justify-center bg-white/30 backdrop-blur-sm">
-          <div className="lg:w-[30rem] w-11/12 p-4 rounded-2xl anime bg-white shadow-lg border">
-            <div className="w-full flex items-center justify-end">
-              <button className="hover:text-red-600 text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6  w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <h1 className="w-full text-center text-xl font-bold">
-              Talebinizi aldık.
-            </h1>
-            <p className="text-center mt-2">
-              Ekibimiz bizlerle paylaşmış olduğunuz iletişim bilgilerinizden sizinle iletişime geçecektir.
-            </p>
-            <div className="text-center w-full py-5">
-              <button className=" rounded-lg bg-zinc-700 hover:bg-zinc-700/70 transition-all duration-500 text-white py-2 px-4">
-                Tamam
-              </button>
+        {
+          pop && <div className="w-full h-screen fixed top-0 left-0 z-[99999999999] flex items-center fade justify-center bg-white/30 backdrop-blur-sm">
+            <div className="lg:w-[30rem] w-11/12 p-4 rounded-2xl anima bg-white shadow-lg border">
+              <div className="w-full flex items-center justify-end">
+                <button onClick={() => { setPop(false), location.reload() }} className="hover:text-red-600 text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6  w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <h1 className="w-full text-center text-xl font-bold">
+                Talebinizi aldık.
+              </h1>
+              <p className="text-center mt-2">
+                Ekibimiz bizlerle paylaşmış olduğunuz iletişim bilgilerinizden sizinle iletişime geçecektir.
+              </p>
+              <div className="text-center w-full py-5">
+                <button onClick={() => { setPop(false), location.reload() }} className=" rounded-lg bg-zinc-700 hover:bg-zinc-700/70 transition-all duration-500 text-white py-2 px-4">
+                  Tamam
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        }
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#dee7ff47] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
@@ -126,7 +129,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Email address"
+                    placeholder="Email"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
