@@ -8,7 +8,7 @@ function page({ }: Props) {
             <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
                 <br /><br /><h1 className='text-2xl font-bold'>
                     Gizlilik ve Güvenlik Politikamız</h1><br /><br />
-                1. Amaç ve Kapsam Bu Gizlilik ve Güvenlik Politikası, Dijital Hat (bundan sonra "Şirket" olarak anılacak) tarafından sunulan hizmetlerden faydalanan müşterilerin ve kullanıcıların kişisel verilerinin toplanma, kullanılma, saklanma ve korunma esaslarını açıklamaktadır.
+                1. Amaç ve Kapsam Bu Gizlilik ve Güvenlik Politikası, Digital Hat (bundan sonra "Şirket" olarak anılacak) tarafından sunulan hizmetlerden faydalanan müşterilerin ve kullanıcıların kişisel verilerinin toplanma, kullanılma, saklanma ve korunma esaslarını açıklamaktadır.
                 Şirketimiz, kişisel verilerinize ve gizliliğinize önem vermektedir. Bu politika, hizmetlerimizi kullanırken veri gizliliği ve güvenliği konularında sizi bilgilendirmek amacıyla hazırlanmıştır. <br />
                 <br />2. Toplanan Veriler Şirketimiz tarafından sunulan hizmetler dahilinde aşağıdaki kişisel veriler toplanabilir:
                 Kimlik Bilgileri: Ad, soyad, T.C. kimlik numarası,
