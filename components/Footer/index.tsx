@@ -2,8 +2,30 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent } from "react";
 
 const Footer = () => {
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get('email');
+    fetch(`https://siteapi.dgtalhat.com/api/newslettersubscribers`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email
+      })
+    })
+      .then(res => res.json())
+      .then((res) => {
+        console.log(res);
+        location.reload();
+      })
+  }
+
   return (
     <>
       <footer className="border-t border-stroke bg-white dark:border-strokedark dark:bg-blacksection">
@@ -203,10 +225,12 @@ const Footer = () => {
                     Gelecekteki güncellemeleri almak için abone olun
                   </p>
 
-                  {/* <form action="#">
+                  <form onSubmit={handleSubmit}>
                     <div className="relative">
                       <input
                         type="text"
+                        name="email"
+                        id="email"
                         placeholder="Email address"
                         className="w-full rounded-full border border-stroke px-6 py-3 shadow-solid-11 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
                       />
@@ -237,7 +261,7 @@ const Footer = () => {
                         </svg>
                       </button>
                     </div>
-                  </form> */}
+                  </form>
                 </motion.div>
               </div>
             </div>
