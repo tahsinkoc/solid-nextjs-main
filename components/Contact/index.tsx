@@ -1,8 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
-
+import React, { FormEvent } from "react";
+interface ContactForm {
+  fullname: string;
+  email: string;
+  subject: string;
+  phone: string;
+  description: string;
+}
 const Contact = () => {
   /**
    * Source: https://www.joshwcomeau.com/react/the-perils-of-rehydration/
@@ -14,6 +20,23 @@ const Contact = () => {
   }, []);
   if (!hasMounted) {
     return null;
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    const formData = new FormData(e.currentTarget)
+    const form = Object.fromEntries(formData);
+    e.preventDefault()
+    fetch('https://siteapi.dgtalhat.com/api/offerrequests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+      .then(res => res.json())
+      .then((res) => {
+        console.log(res);
+      })
   }
 
   return (
@@ -61,18 +84,21 @@ const Contact = () => {
               </h2>
 
               <form
-                action="https://formbold.com/s/unique_form_id"
-                method="POST"
+                onSubmit={handleSubmit}
               >
                 <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
-                    placeholder="İsim"
+                    name="fullname"
+                    id="fullname"
+                    placeholder="İsim & Soyisim"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
 
                   <input
                     type="email"
+                    id="email"
+                    name="email"
                     placeholder="Email address"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
@@ -81,11 +107,15 @@ const Contact = () => {
                 <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
+                    id="subject"
+                    name="subject"
                     placeholder="Konu"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
 
                   <input
+                    name="phone"
+                    id="phone"
                     type="text"
                     placeholder="Telefon Numarası"
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
@@ -94,6 +124,8 @@ const Contact = () => {
 
                 <div className="mb-11.5 flex">
                   <textarea
+                    name="description"
+                    id="phone"
                     placeholder="Mesaj"
                     rows={4}
                     className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
@@ -136,7 +168,7 @@ const Contact = () => {
                     aria-label="send message"
                     className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
                   >
-                    Mesaj Gönder
+                    Teklif Al
                     <svg
                       className="fill-white"
                       width="14"
@@ -179,7 +211,7 @@ const Contact = () => {
 
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
-                  Our Loaction
+                  Adresimiz
                 </h3>
                 <p>Meydan İstanbul AVM, Balkan Cd. No:62, 34770 Ümraniye/İstanbul</p>
               </div>

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Support contact page of dgtalhat.com",
 };
 
+
 const SupportPage = () => {
   return (
     <div className="pb-20 pt-40">
