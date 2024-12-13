@@ -109,9 +109,15 @@ const menuData: Menu[] = [
 
   {
     id: 4,
-    title: "Destek",
+    title: "Teklif Alın",
     newTab: false,
     path: "/support",
+  },
+  {
+    id: 5,
+    title: "Gizlilik ve Güvenlik Politikamız",
+    newTab: false,
+    path: "/security",
   },
 ];
 
