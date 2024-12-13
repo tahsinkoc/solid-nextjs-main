@@ -30,7 +30,7 @@ const Footer = () => {
                 className="animate_top w-1/2 lg:w-1/4"
               >
                 <Link href="/">
-                                    <Image
+                  <Image
                     width={50}
                     height={50}
                     src="/Digitalhat.png"
@@ -203,7 +203,7 @@ const Footer = () => {
                     Gelecekteki güncellemeleri almak için abone olun
                   </p>
 
-                  <form action="#">
+                  {/* <form action="#">
                     <div className="relative">
                       <input
                         type="text"
@@ -237,7 +237,7 @@ const Footer = () => {
                         </svg>
                       </button>
                     </div>
-                  </form>
+                  </form> */}
                 </motion.div>
               </div>
             </div>
