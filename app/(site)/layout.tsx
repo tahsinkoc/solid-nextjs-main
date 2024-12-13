@@ -18,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" suppressHydrationWarning>
+      <meta name="google-site-verification" content="puiKqcvf6ur95dPHDatV_hcA-t_16h5cpzkJ0X64ptI" />
       <body className={`dark:bg-black ${inter.className}`}>
         <ThemeProvider
           enableSystem={false}

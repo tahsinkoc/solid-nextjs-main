@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Hero = () => {
@@ -31,19 +32,19 @@ const Hero = () => {
               <div className="mt-10">
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap gap-5">
-                    <input
+                    {/* <input
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       type="text"
                       placeholder="Email adresinizi girin"
                       className="rounded-full border border-stroke px-6 py-2.5 shadow-solid-2 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
-                    />
-                    <button
+                    /> */}
+                    <Link href={'/support'}
                       aria-label="get started button"
                       className="flex rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
                     >
-                      Hemen Başlayın
-                    </button>
+                      Teklif Alın
+                    </Link>
                   </div>
                 </form>
 
