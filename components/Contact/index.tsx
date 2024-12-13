@@ -177,12 +177,12 @@ const Contact = () => {
                 Bizimle İletişime Geçin
               </h2>
 
-              {/* <div className="5 mb-7">
+              <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
                   Our Loaction
                 </h3>
-                <p>290 Maryam Springs 260, Courbevoie, Paris, France</p>
-              </div> */}
+                <p>Meydan İstanbul AVM, Balkan Cd. No:62, 34770 Ümraniye/İstanbul</p>
+              </div>
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
                   Email
